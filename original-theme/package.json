@@ -1,18 +1,24 @@
 {
   "name": "create-theme",
   "version": "1.0.0",
-  "description": "",
+  "description": "WordPressのテーマを作成するためのプロジェクト",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode=production",
-    "watch": "npm run build && node upload.js"
+    "serve": "npm run build && node upload.js",
+    "watch": "nodemon --watch src --ext js,scss --exec npm run serve --delay 1"
   },
   "keywords": [
     "Wordpress"
   ],
   "author": "junseinagao",
   "license": "ISC",
-  "dependencies": {},
+  "browserslist": [
+    "defaults"
+  ],
+  "dependencies": {
+    "nodemon": "^2.0.13"
+  },
   "devDependencies": {
     "@babel/core": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
