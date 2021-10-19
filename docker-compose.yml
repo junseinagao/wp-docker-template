@@ -7,8 +7,8 @@ services:
       - ${IP}:9090:80 # change ip if required
     volumes:
       - ./config/php.conf.ini:/usr/local/etc/php/conf.d/conf.ini
-      - ./wp_app:/var/www/html # Full wordpress project
-      - ./theme-name/trunk/:/var/www/html/wp-content/themes/theme-name
+      - ./wp-app:/var/www/html # Full wordpress project
+      - ./original-theme/trunk/:/var/www/html/wp-content/themes/original-theme
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_NAME: "${DB_NAME}"
@@ -23,7 +23,7 @@ services:
     image: wordpress:cli
     volumes:
       - ./config/php.conf.ini:/usr/local/etc/php/conf.d/conf.ini
-      - ./wp_app:/var/www/html
+      - ./wp-app:/var/www/html
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_NAME: "${DB_NAME}"
@@ -43,7 +43,7 @@ services:
         '--collation-server=utf8mb4_unicode_ci'
     ]
     volumes:
-      - ./wp_data:/docker-entrypoint-initdb.d
+      - ./wp-data:/docker-entrypoint-initdb.d
       - db_data:/var/lib/mysql
     environment:
       MYSQL_DATABASE: "${DB_NAME}"
