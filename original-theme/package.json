@@ -1,0 +1,30 @@
+{
+  "name": "create-theme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cleanup": "node cleanup.js",
+    "build": "webpack --mode=production",
+    "watch": "nodemon --ext scss,js --watch src --exec yarn build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "autoprefixer": "^10.3.7",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^6.4.0",
+    "mini-css-extract-plugin": "^2.4.2",
+    "postcss-loader": "^6.2.0",
+    "sass": "^1.43.2",
+    "sass-loader": "^12.2.0",
+    "style-loader": "^3.3.0",
+    "webpack": "^5.58.2",
+    "webpack-cli": "^4.9.1"
+  }
+}
