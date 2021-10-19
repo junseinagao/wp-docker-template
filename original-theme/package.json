@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "cleanup": "node cleanup.js",
     "build": "webpack --mode=production",
-    "watch": "nodemon --ext scss,js --watch src --exec yarn build"
+    "watch": "npm run build && node upload.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "Wordpress"
+  ],
+  "author": "junseinagao",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
@@ -19,6 +19,7 @@
     "autoprefixer": "^10.3.7",
     "babel-loader": "^8.2.2",
     "css-loader": "^6.4.0",
+    "fs-extra": "^10.0.0",
     "mini-css-extract-plugin": "^2.4.2",
     "postcss-loader": "^6.2.0",
     "sass": "^1.43.2",
